@@ -26,7 +26,7 @@ for creating AZURE resources, and you can customize the inputs as needed. Below 
 ```hcl
 module "firewall" {
   depends_on          = [module.name_specific_subnet]
-  source              = "git::https://github.com/opsstation/terraform-azure-firewall.git?ref=v1.0.0"
+  source              = "git::https://github.com/yadavprakash/terraform-azure-firewall.git?ref=v1.0.0"
   name                = local.name
   environment         = local.environment
   resource_group_name = module.resource_group.resource_group_name
@@ -155,7 +155,7 @@ module "firewall" {
 ```hcl
 module "firewall-rules" {
   depends_on          = [module.firewall]
-  source              = "git::https://github.com/opsstation/terraform-azure-firewall.git?ref=v1.0.0"
+  source              = "git::https://github.com/yadavprakash/terraform-azure-firewall.git?ref=v1.0.0"
   name                = local.name
   environment         = local.environment
   policy_rule_enabled = true
@@ -278,7 +278,7 @@ module "firewall-rules" {
 ```hcl
 module "firewall" {
   depends_on              = [module.name_specific_subnet]
-  source                  = "git::https://github.com/opsstation/terraform-azure-firewall.git?ref=v1.0.0"
+  source                  = "git::https://github.com/yadavprakash/terraform-azure-firewall.git?ref=v1.0.0"
   name                    = local.name
   environment             = local.environment
   resource_group_name     = module.resource_group.resource_group_name
@@ -408,14 +408,14 @@ module "firewall" {
 This example demonstrates how to create various AZURE resources using the provided modules. Adjust the input values to suit your specific requirements.
 
 ## Examples
-For detailed examples on how to use this module, please refer to the [examples](https://github.com/opsstation/terraform-azure-firewall/blob/master/_example) directory within this repository.
+For detailed examples on how to use this module, please refer to the [examples](https://github.com/yadavprakash/terraform-azure-firewall/blob/master/_example) directory within this repository.
 
 ## License
-This Terraform module is provided under the **MIT** License. Please see the [LICENSE](https://github.com/opsstation/terraform-azure-firewall/blob/master/LICENSE) file for more details.
+This Terraform module is provided under the **MIT** License. Please see the [LICENSE](https://github.com/yadavprakash/terraform-azure-firewall/blob/master/LICENSE) file for more details.
 
 ## Author
 Your Name
-Replace **MIT** and **OpsStation** with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
+Replace **MIT** and **yadavprakash** with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
@@ -435,7 +435,7 @@ Replace **MIT** and **OpsStation** with the appropriate license and your informa
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_labels"></a> [labels](#module\_labels) | git::https://github.com/opsstation/terraform-azure-labels.git | v1.0.0 |
+| <a name="module_labels"></a> [labels](#module\_labels) | git::https://github.com/yadavprakash/terraform-azure-labels.git | v1.0.0 |
 
 ## Resources
 
@@ -470,7 +470,7 @@ Replace **MIT** and **OpsStation** with the appropriate license and your informa
 | <a name="input_identity_type"></a> [identity\_type](#input\_identity\_type) | Specifies the type of Managed Service Identity that should be configured on this Storage Account. Possible values are `SystemAssigned`, `UserAssigned`, `SystemAssigned, UserAssigned` (to enable both). | `string` | `"UserAssigned"` | no |
 | <a name="input_label_order"></a> [label\_order](#input\_label\_order) | Label order, e.g. sequence of application name and environment `name`,`environment`,'attribute' [`webserver`,`qa`,`devops`,`public`,] . | `list(any)` | <pre>[<br>  "name",<br>  "environment"<br>]</pre> | no |
 | <a name="input_location"></a> [location](#input\_location) | The location/region where the virtual network is created. Changing this forces a new resource to be created. | `string` | `""` | no |
-| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'opsstation'. | `string` | `""` | no |
+| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'yadavprakash'. | `string` | `""` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name  (e.g. `app` or `cluster`). | `string` | `""` | no |
 | <a name="input_nat_policy_collection_group"></a> [nat\_policy\_collection\_group](#input\_nat\_policy\_collection\_group) | (optional) Name of nat policy group | `string` | `"DefaultDnatRuleCollectionGroup"` | no |
 | <a name="input_nat_rule_collection"></a> [nat\_rule\_collection](#input\_nat\_rule\_collection) | One or more nat\_rule\_collection blocks as defined below. | `any` | `{}` | no |
@@ -487,7 +487,7 @@ Replace **MIT** and **OpsStation** with the appropriate license and your informa
 | <a name="input_public_ip_prefix_length"></a> [public\_ip\_prefix\_length](#input\_public\_ip\_prefix\_length) | Specifies the number of bits of the prefix. The value can be set between 0 (4,294,967,296 addresses) and 31 (2 addresses). Defaults to 28(16 addresses). Changing this forces a new resource to be created. | `number` | `31` | no |
 | <a name="input_public_ip_prefix_sku"></a> [public\_ip\_prefix\_sku](#input\_public\_ip\_prefix\_sku) | SKU for public ip prefix. Default to standard. | `string` | `"Standard"` | no |
 | <a name="input_public_ip_sku"></a> [public\_ip\_sku](#input\_public\_ip\_sku) | The SKU of the Public IP. Accepted values are Basic and Standard. Defaults to Basic | `any` | `"Standard"` | no |
-| <a name="input_repository"></a> [repository](#input\_repository) | Terraform current module repo | `string` | `"https://github.com/opsstation/terraform-azure-firewall"` | no |
+| <a name="input_repository"></a> [repository](#input\_repository) | Terraform current module repo | `string` | `"https://github.com/yadavprakash/terraform-azure-firewall"` | no |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | A container that holds related resources for an Azure solution | `any` | `""` | no |
 | <a name="input_sku_name"></a> [sku\_name](#input\_sku\_name) | (optional) describe your variable | `string` | `"AZFW_VNet"` | no |
 | <a name="input_sku_policy"></a> [sku\_policy](#input\_sku\_policy) | Specifies the firewall-policy sku | `string` | `"Standard"` | no |
